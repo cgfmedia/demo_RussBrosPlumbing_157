@@ -18,7 +18,7 @@
 
 
 
-        
+       
 
 
 
@@ -46,11 +46,7 @@
 
 
 
-			$.getScript("phonegap.js");
-
-
-
-			$.getScript("PushNotification.js");			
+			$.getScript("phonegap.js");			
 
 
 
@@ -70,7 +66,215 @@
 
 
 
-        
+
+
+
+
+        <script type="text/javascript">
+
+
+
+	                        
+
+
+
+            $(document).ready(function() {
+
+
+
+                //	 alert("1");
+
+
+
+                document.addEventListener("deviceready",onDeviceReadyCheckNetwork,false);
+
+
+
+            });
+
+
+
+    
+
+
+
+            function onDeviceReadyCheckNetwork() {
+
+
+
+                // alert("2");
+
+
+
+                var networkState = navigator.network.connection.type;
+
+
+
+                if (networkState===Connection.UNKNOWN){
+
+
+
+                    alert ("It appears you are currently not connected to the Internet. Please establish a connection and try again.");
+
+
+
+                }
+
+
+
+                else if (networkState===Connection.NONE){
+
+
+
+                    alert ("It appears you are currently not connected to the Internet. Please establish a connection and try again.");
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+
+
+
+        </script>
+
+
+
+        <script type="text/javascript" src="jquery.youtube.channel2.js"></script>
+
+
+
+        <script type="text/javascript" charset="utf-8" src="video.js"></script>
+
+
+
+        <script type="text/javascript">
+
+
+
+	                        
+
+
+
+            $(document).ready(function() {
+
+
+
+                document.addEventListener("deviceready",onDeviceReadyVideoPlayer,false);
+
+
+
+            });
+
+
+
+    
+
+
+
+            function onDeviceReadyVideoPlayer() {
+
+
+
+                $("a.open-plugin-videoplayer").click(function() {
+
+
+
+                    var vidGoUrl = $(this).attr("data-vidurl");
+
+
+
+                    window.plugins.videoPlayer.play(vidGoUrl);
+
+
+
+                    return false;
+
+
+
+                });
+
+
+
+            }
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">    
+
+
+
+            $(document).ready(function() {
+
+
+
+                $('#youtubevideos').youTubeChannel({ 
+
+
+
+                    userName: '', 
+
+
+
+                    channel: "uploads", 
+
+
+
+                    hideAuthor: true,
+
+
+
+                    numberToDisplay: 30,
+
+
+
+                    linksInNewWindow: true
+
+
+
+                    /*other options*/
+
+
+
+                    /*loadingText: "Loading...",   */                 
+
+
+
+                },"android");
+
+
+
+            });            
+
+
+
+        </script>
+
+
+
+
+
+
+
+
 
 
 
@@ -194,6 +398,10 @@
 
 
 
+
+
+
+
     </head>
 
 
@@ -218,7 +426,7 @@
 
 
 
-                <div class="ui-bar ui-bar-a"><center><h1>Opening Hours</h1></center>
+                <div class="ui-bar ui-bar-a"><center><h1>Youtube</h1></center>
 
 
 
@@ -254,15 +462,9 @@
 
 
 
-            <div data-role="content">
+            <div data-role="content" id="youtubevideos">
 
 
-
-                <p>Because Russo Bros. &amp; Co. employs multiple technicians skilled in all levels of plumbing, heating and lawn sprinklers we can provide same day service to most of our clients. Our state of the art call center will match the best available technician for your problem and do whatever is possible to accommodate your schedule.</p>
-
-
-
-<p class="content">Call <strong class="number">800-677-8776</strong> to schedule same day or emergency service. Please note that we can only respond to e-mails Monday through Friday.</p>
 
 
 
@@ -276,11 +478,15 @@
 
 
 
+            <style type="text/css" >
 
 
 
+                .nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; width: 60px!important;}		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }#tab1 .ui-icon { background:  url("icons_tech_1579.png") 50% 50% no-repeat; background-size: 50px 50px; }#tab2 .ui-icon { background:  url("icons_communication_1092.png") 50% 50% no-repeat; background-size: 50px 50px; }  a[href="photos.html"] .ui-icon { background:  url("icon(321).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; }   a[href="aboutUs.html"] .ui-icon { background:  url("icon(50).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; }   a[href="content1.html"] .ui-icon { background:  url("icon(24).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; } #tab3 .ui-icon { background:  url("64Px_-_504-11.png") 50% 50% no-repeat; background-size: 30px 30px; }#tab4 .ui-icon { background:  url("64Px_-_504-210.png") 50% 50% no-repeat; background-size: 30px 30px; }#tab5 .ui-icon { background:  url("more.png") 50% 50% no-repeat; background-size: 30px 30px; }
 
-            <style> .nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; width: 60px!important;}		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }#tab1 .ui-icon { background:  url("icons_tech_1579.png") 50% 50% no-repeat; background-size: 50px 50px; }#tab2 .ui-icon { background:  url("icons_communication_1092.png") 50% 50% no-repeat; background-size: 50px 50px; }  a[href="photos.html"] .ui-icon { background:  url("icon(321).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; }   a[href="aboutUs.html"] .ui-icon { background:  url("icon(50).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; }   a[href="content1.html"] .ui-icon { background:  url("icon(24).png") 50% 50% no-repeat !important;background-size: 30px 30px !important; } #tab3 .ui-icon { background:  url("64Px_-_504-11.png") 50% 50% no-repeat; background-size: 30px 30px; }#tab4 .ui-icon { background:  url("64Px_-_504-210.png") 50% 50% no-repeat; background-size: 30px 30px; }#tab5 .ui-icon { background:  url("more.png") 50% 50% no-repeat; background-size: 30px 30px; }</style>
+
+
+            </style>
 
 
 
